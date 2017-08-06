@@ -4,6 +4,13 @@ Simple example code for [Design Patterns for Humans's chinese and C++ version](h
 
 Install [CMake](https://cmake.org/) at first.
 
+## first clone
+
+```sh
+cd DesignPatterns
+cmake .
+```
+
 ## build
 
 ```sh
