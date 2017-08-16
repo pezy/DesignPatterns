@@ -2,14 +2,15 @@
 #include <string>
 #include <unordered_map>
 
+// Anything that will be cached is flyweight.
+// Types of tea here will be flyweights.
 class KarakTea {};
 
 class TeaMaker {
 public:
     KarakTea* Make(const std::string& preference) {
-        if (availableTea_.find(preference) == availableTea_.end()) {
+        if (availableTea_.find(preference) == availableTea_.end())
             availableTea_.insert({preference, new KarakTea()});
-        }
 
         return availableTea_.at(preference);
     }
