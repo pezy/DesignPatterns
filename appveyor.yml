@@ -1,0 +1,26 @@
+os: Visual Studio 2017
+
+platform:
+  - Win32
+  - Win64
+
+configuration:
+  - Release
+
+before_build:
+  - if %platform%==Win32 set generator=Visual Studio 15 2017
+  - if %platform%==Win64 set generator=Visual Studio 15 2017 Win64
+  - if %platform%==Win32 set vcplatform=Win32
+  - if %platform%==Win64 set vcplatform=x64
+
+build_script:
+  - mkdir build
+  - mkdir build\bin
+  - mkdir build\bin\Release
+  - cd build
+  - cmake .. -G "%generator%"
+  - cmake --build . --config Release
+
+artifacts:
+  - path: build\bin\Release
+  - name: DesignPatterns-$(APPVEYOR_BUILD_VERSION)
