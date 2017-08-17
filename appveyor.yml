@@ -23,4 +23,4 @@ build_script:
 
 artifacts:
   - path: build\bin\Release
-  - name: DesignPatterns-$(APPVEYOR_BUILD_VERSION)
+    name: DesignPatterns-$(APPVEYOR_BUILD_VERSION)
