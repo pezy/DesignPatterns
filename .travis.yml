@@ -1,0 +1,21 @@
+# Travis CI configuration for Design Patterns Example
+
+lanuage: cpp
+dist: trusty
+notifications:
+  email: false
+sudo: false
+os:
+  - linux
+  - osx
+before_install:
+  - if [[ $TRAVIS_OS_NAME == linux   ]]; then LINUX=true; fi
+  - if [[ $TRAVIS_OS_NAME == osx     ]]; then OSX=true; fi
+compiler:
+  - clang
+  - gcc
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
