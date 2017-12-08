@@ -17,6 +17,7 @@ public:
     }
 private:
     void _BubbleSort(std::vector<int>& vec) {
+        if (vec.empty()) return;
         using size = std::vector<int>::size_type;
         for (size i = 0; i != vec.size(); ++i)
             for (size j = 0; j != vec.size()-1; ++j)
@@ -33,6 +34,7 @@ public:
     }
 private:
     void _QuickSort(std::vector<int>& vec) {
+        if (vec.empty()) return;
         using size = std::vector<int>::size_type;
         auto partition = [&vec](size low, size high) {
             int pivot = vec[high];
@@ -62,7 +64,7 @@ public:
 
 int main()
 {
-    std::vector<int> vec{1, 5, 4, 3, 2, 8};
+    std::vector<int> vec{};
 
     Sorter::Sort(vec, std::make_shared<BubbleSortStrategy>());
     for (int i : vec) std::cout << i << " ";
