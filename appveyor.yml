@@ -7,6 +7,8 @@ platform:
 configuration:
   - Release
 
+build: off
+
 before_build:
   - if %platform%==Win32 set generator=Visual Studio 15 2017
   - if %platform%==Win64 set generator=Visual Studio 15 2017 Win64
