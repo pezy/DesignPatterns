@@ -16,8 +16,6 @@ public:
 class CoffeePlus : public ICoffee {
 public:
     CoffeePlus(ICoffee& coffee): coffee_(coffee) {}
-    virtual float GetCost() = 0;
-    virtual std::string GetDescription() = 0;
 protected:
     ICoffee& coffee_;
 };
